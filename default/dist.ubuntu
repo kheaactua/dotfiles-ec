@@ -8,3 +8,5 @@
  stty erase 
 # # include . in path
  export PATH="$PATH:."
+
+# vim: ts=3 sw=3 noet ft=sh ffs=unix :

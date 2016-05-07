@@ -7,3 +7,5 @@ xlf -qversion
 echo "Machine name... $EC_ARCH "
 # Use s.locate to find the location of a given file e.g to find "rmnlib.h"
 #  s.locate --prepath=$ARMNLIB/include --inc rmnlib.h
+
+# vim: ts=3 sw=3 noet ft=sh ffs=unix :

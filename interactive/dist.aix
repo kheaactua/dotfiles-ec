@@ -1,3 +1,6 @@
+# Need the following to AFSISIO and friends
+. ssmuse-sh -d cmoi/base/20141216
+
 # CMC Language
 export CMCLNG=english
 
@@ -11,7 +14,7 @@ export pgm=/users/tor/arqp/pmr/gemmach15/ccc
 
 alias screen="screen -e^Ff"
 #alias gst="git status"
-alias gd="git diff"
+alias gd="git diff -w"
 
 source ~/gm/utils/geml.dot
 alias geml="showGemLogs"
@@ -37,4 +40,4 @@ done
 
 export PATH=${HOME}/gm/utils:$PATH
 
-# vim: ts=3 sw=3 sts=0 noet ffs=unix :
+# vim: ts=3 sw=3 sts=0 noet ffs=unix ft=sh :

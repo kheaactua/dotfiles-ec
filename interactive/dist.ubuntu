@@ -1,13 +1,5 @@
 # put anything here related to Linux(Ubuntu)
 
-# SPI Stuff
-#export PATH="/users/dor/afsr/ops/eer_SPI-7.4.1/:$PATH"
-#export PATH="/ssm/net/cmoe/apps/SPI_7.7.0_multi/bin/SPI:$PATH"
-
-# Some GEMMACH stuff
-#export PATH="${HOME}/armnlib/v_3.3.0:$PATH"
-#export PATH="${HOME}/armnlib:$PATH"
-
 #PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@${TRUE_HOST}\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 
@@ -17,10 +9,6 @@ for FILE in $(find /home/afsu/air/bash_completion -type f); do
    echo -n "   $(basename ${FILE}) "
    source $FILE
 done
-
-## Set default permissions.  Recall with umask, you set the negative:
-##umask 003
-#umask 0022
 
 # CMC Language
 export CMCLNG=english
@@ -56,5 +44,6 @@ if [ -x /usr/bin/dircolors ]; then
    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-
 export PATH=${HOME}/gm/utils:$PATH
+
+# vim: ts=3 sw=3 sts=0 noet ffs=unix ft=sh :

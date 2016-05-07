@@ -1,0 +1,17 @@
+GEM_VER="3.3.8.4"
+
+
+#
+# Useful aliases and functions
+#
+alias fixlim='ulimit -t unlimited ; ulimit -m unlimited ; ulimit -d unlimited ; ulimit -s unlimited'
+
+function sd() { 
+	echo ${TRUE_HOST}.cmc.ec.gc.ca:0.0 >~/.LOGIN_DISPLAY
+	export DISPLAY=${TRUE_HOST}:0.0
+}
+function dt() {
+	date '+DATE: %m/%d/%y%nTIME: %H:%M:%S'
+}
+
+# vim: ts=3 sw=3 sts=0 ft=sh ffs=unix :

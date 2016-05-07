@@ -1,0 +1,19 @@
+## Use the legacy stuff for aix in batch mode
+#.........................
+#. s.ssmuse.dot ovbin # puts ovbin directories in the PATH
+#. s.ssmuse.dot rmnlib-dev # puts RPN development libraries in the PATH (rpncomm, librmn, ...)
+#. s.ssmuse.dot devtools # s.compile
+#. s.ssmuse.dot OPS/legacy # defines  $AFSISIO etc. to run GEM/GEM-MACH... use for GEM4,not for 3.3.8
+#. s.ssmuse.dot legacy # some of  old path environnement (armnlib, afsisio), needed for  fst
+#.........................
+############### Now done in default/pre (2015-09-24)########
+## Use the legacy-free utilities for AIX in batch mode as well (2015-06-25)
+#. ssmuse-sh -d rpn/libs/15.2
+##. s.ssmuse.dot /ssm/net/rpn/utils/15.2
+#. ssmuse-sh -d rpn/utils/15.2
+##
+################################################
+#Need the following to AFSISIO and friends
+. ssmuse-sh -d cmoi/base/20141216
+
+export MP_PULSE=0
