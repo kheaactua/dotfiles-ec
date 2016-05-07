@@ -1,0 +1,60 @@
+# put anything here related to Linux(Ubuntu)
+
+# SPI Stuff
+#export PATH="/users/dor/afsr/ops/eer_SPI-7.4.1/:$PATH"
+#export PATH="/ssm/net/cmoe/apps/SPI_7.7.0_multi/bin/SPI:$PATH"
+
+# Some GEMMACH stuff
+#export PATH="${HOME}/armnlib/v_3.3.0:$PATH"
+#export PATH="${HOME}/armnlib:$PATH"
+
+#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@${TRUE_HOST}\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+# Bash Completion, this is Hugo's, but might as well use it anyways..
+echo "Completion automatique de bash"
+for FILE in $(find /home/afsu/air/bash_completion -type f); do
+   echo -n "   $(basename ${FILE}) "
+   source $FILE
+done
+
+## Set default permissions.  Recall with umask, you set the negative:
+##umask 003
+#umask 0022
+
+# CMC Language
+export CMCLNG=english
+
+# Some shortcuts to move around
+export hadar=/fs/dev/aqb/s1/arqp/rma
+export zeta=/fs/aqb/s1/arqp/rma
+export mobius=/local/mobius21/arqp/rma
+export pgm=/users/tor/arqp/pmr/gemmach15/ccc
+
+# backspace on spica
+#stty erase ^?
+
+# Balbir's 10km
+export b10=/users/tor/arqt/bal/gem-machcont10km_spica_usedailydata_v3script
+
+if [[ -e ~/.profile.d/interactive/aliases ]]; then
+	. ~/.profile.d/interactive/aliases
+fi;
+
+# Set prompt
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@${TRUE_HOST}\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+# Bash Completion, this is Hugo's, but might as well use it anyways..
+echo "Completion automatique de bash"
+for FILE in $(find /home/afsu/air/bash_completion -type f); do
+   echo -n "   $(basename ${FILE}) "
+   source $FILE
+done
+
+# Dir colours, used by solarized
+if [ -x /usr/bin/dircolors ]; then
+   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+
+export PATH=${HOME}/gm/utils:$PATH

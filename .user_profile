@@ -1,0 +1,88 @@
+# .user_profile ... This is the file where user customised stuff is put for all the platforms
+echo ".user_profile  ... third file to be executed from ~/.profile.d "
+# Get legacy environment for now .... gives access to the commands like r.compile etc..
+#. s.ssmuse.dot dot ovbin legacy ...may 22/12..."legacy" removed due to conflict with "fgen+" 
+. s.ssmuse.dot dot ovbin 
+. s.ssmuse.dot rmnlib-dev # librairies de developpement RPN (rpncomm, librmn, ...)
+. s.ssmuse.dot OPS/legacy # pour definir $AFSISIO entre autres choses
+. s.ssmuse.dot legacy # pour definir $AFSISIO entre autres choses
+. s.ssmuse.dot devtools # s.compile
+#
+export EDITOR=vi
+export VISUAL=vi
+set -o emacs    # set emacs mode to get ESC-ESC completion when VISUAL=vi
+#following lines fix the problems with arrow keys on IBM's
+#...
+#alias __A=$(print '\0020') # ^P = up = previous command
+#alias __B=$(print '\0016') # ^N = down = next command
+#alias __C=$(print '\0006') # ^F = right = forward a character
+#alias __D=$(print '\0002') # ^B = left = back a character
+#alias __H=$(print '\0001') # ^A = home = beginning of line
+#...
+#export NO_MESSAGES=1
+#.....
+# stuff caried over my old setup ( i.e. from ~/.profile_usr)
+umask  022
+export TZ=GMT
+export CMCLNG=english
+#export TMPDIR=~/tmp
+#export PS1="`hostname`:~%"
+export history=100
+export savehist=100
+# set up your aliases here...
+alias xt='xterm -geometry 95x25 -vb -bg navy -fg grey -ls -sb -cr green -rw -fn 10x20 &'
+alias chex='chmod +x'
+#pabla aliases
+alias h='history'
+alias l2c="ls -l | awk '{printf \"%15s   %-s\n\", \$5, \$9}'"
+echo  $PATH
+echo $DISPLAY
+# set up SPI Path for BAQS project in order to use AQMAG launch script
+export SPI_PATH='/users/dor/afsr/ops/eer_SPI-7.5.0'
+alias spi='/users/dor/afsr/ops/eer_SPI-7.5.0/SPI'
+# set up alias to run Totalview on zeta
+# log on to backup interactive node i.e. from erg,ssh zeta;ssh c7f19p4m
+alias tv='eval `ssmuse sh -d /opt/ssm -p totalview_8.7.0.7_aix53-ppc-64`;export AIXTHREAD_STK=256000000;export OMP_NUM_THREADS=8;tv8'
+# for erg... set sheet size to be letter size
+#alias a2ps='a2ps -M Letter'
+# In order to run "mgdiff" on erg, unset following variable
+unset XUSERFILESEARCHPATH
+
+
+
+# Added by Matt
+#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@${TRUE_HOST}\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+# Bash Completion, this is Hugo's, but might as well use it anyways..
+echo "Completion automatique de bash"
+for FILE in $(find /home/afsu/air/bash_completion -type f); do
+   echo -n "   $(basename ${FILE}) "
+   source $FILE
+done
+
+## Set default permissions.  Recall with umask, you set the negative:
+##umask 003
+#umask 0022
+
+# CMC Language
+export CMCLNG=english
+
+# Some shortcuts to move around
+export hadar=/fs/dev/aqb/s1/arqp/rma
+export zeta=/fs/aqb/s1/arqp/rma
+export mobius=/local/mobius21/arqp/rma
+export pgm=/users/tor/arqp/pmr/gemmach15/ccc
+
+# backspace on spica
+#stty erase ^?
+
+if [[ -e ~/.profile.d/interactive/aliases ]]; then
+	. ~/.profile.d/interactive/aliases
+fi;
+
+# Set prompt
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@${TRUE_HOST}\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+# Fix the host
+if [[ $HOST = joule* ]] ; then export TRUE_HOST=joule ;  fi

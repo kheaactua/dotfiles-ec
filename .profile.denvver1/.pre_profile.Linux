@@ -1,0 +1,5 @@
+echo ".pre_profile.Linux      ... first..a... file ran from .profile.d"
+stty erase 
+# following line gives access to forcheck
+. s.ssmuse.dot forcheck
+

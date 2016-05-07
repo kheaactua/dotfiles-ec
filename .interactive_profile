@@ -1,0 +1,21 @@
+echo ".interactive_profile  6th file to be executed from ~/.profile.d"
+# sourced after group and user profiles ...if "tty -s is true" ==> interactive session
+###export SSMSYSTEMPLATFORMS=benchmark
+###export SSMEXTRAPLATFORMS=benchmark
+#export ARMNLIB=${ARMNLIB:-/usr/local/env/armnlib}
+#export AFSISIO=${AFSISIO:-/usr/local/env/afsisio}
+#export PATH=$HOME/ovbin:$PATH:$HOME/bin:$ARMNLIB/bin:$ARMNLIB/scripts
+#export PATH=$HOME/ovbin:$PATH:$HOME/bin
+alias gst="git status"
+alias gd="git diff"
+
+#. s.ssmuse.dot dot ovbin legacy ...may 22/12..."legacy" removed due to conflict with "fgen+"
+# 
+. s.ssmuse.dot dot ovbin OPS/legacy
+. s.ssmuse.dot legacy
+. s.ssmuse.dot Xlf13.108
+. s.ssmuse.dot rmnlib-dev
+. s.ssmuse.dot devtools
+#set up backspace key...
+stty erase 
+

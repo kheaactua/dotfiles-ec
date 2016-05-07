@@ -1,0 +1,8 @@
+echo ".pre_profile  ... first file to be executed from .profile.d directory"
+# set up environment like :
+#export SSM_SYSTEM_PLATFORMS=benchmark
+#export SSM_EXTRA_PLATFORMS=benchmark
+
+###export BATCH_LIKE_INTERACTIVE=1
+#export SETUP_MSG=3
+

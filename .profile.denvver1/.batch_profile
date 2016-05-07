@@ -1,0 +1,11 @@
+echo "============================================="
+echo "==================== BATCH =================="
+echo "============================================="
+
+echo ".batch_profile .... 4th file to be executed from ~/.profile.d"
+#. s.ssmuse.dot dot ovbin legacy ...may 22/12..."legacy" removed due to conflict with "fgen+"
+. s.ssmuse.dot dot ovbin
+. s.ssmuse.dot rmnlib-dev # librairies de developpement RPN (rpncomm, librmn, ...)
+. s.ssmuse.dot devtools # s.compile
+. s.ssmuse.dot OPS/legacy # pour definir $AFSISIO entre autres choses
+. s.ssmuse.dot legacy

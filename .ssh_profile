@@ -1,0 +1,7 @@
+echo ++++++++++ SSH PROFILE to be executed on remote machine ++++++++++
+#. s.ssmuse.dot dot ovbin legacy ...may 22/12..."legacy" removed due to conflict with "fgen+"
+# 
+. s.ssmuse.dot dot
+. s.ssmuse.dot ovbin # met les repertoires ovbin dans le PATH
+. s.ssmuse.dot OPS/legacy # pour definir $AFSISIO entre autres choses
+. s.ssmuse.dot legacy

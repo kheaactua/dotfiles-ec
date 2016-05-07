@@ -1,0 +1,8 @@
+if [[ -e ~/.bash_aliases ]]; then
+	source ~/.bash_aliases
+fi
+
+# And fix ls for AIX..
+if [[ "$(uname -s)" == "AIX" ]]; then
+	alias ls="ls -lAtrF"
+fi 

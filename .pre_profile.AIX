@@ -1,0 +1,3 @@
+echo ".pre_profile.AIX        ... first..a... file ran from .profile.d"
+stty erase 
+

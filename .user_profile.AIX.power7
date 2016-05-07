@@ -1,0 +1,26 @@
+echo ".user_profile.AIX.power7      .... 3a file to be executed from ~/.profile.d "
+# Settings for firefox 3
+#export LD_LIBRARY_PATH=/opt/gtk-2.10/lib:$LD_LIBRARY_PATH
+    ulimit -d unlimited
+    ulimit -m unlimited
+    ulimit -s unlimited
+    ulimit -t unlimited
+# Access XLF compiler
+#echo "Accesing Version 13  of XLF compiler"
+# Following defines ARMNLIB etc..
+#. s.ssmuse.dot dot ovbin legacy ... use following line to get access to operational tools e.g. fgen+ 
+# . s.ssmuse.dot dot ovbin OPS/legacy
+ . s.ssmuse.dot dot ovbin OPS/legacy legacy
+# Use s.locate to find the location of a given file e.g to find "rmnlib.h"
+#  s.locate --prepath=$ARMNLIB/include --inc rmnlib.h
+# Please note that s.locate uses path defined by EC_INCLUDE_PATH
+# s.list_ssm_shortcuts --filter=Xlf .... gives the list of all the version of compiler
+# Following line controls the version of XLF compiler used on IBM clusters
+. s.ssmuse.dot Xlf13.108
+# Following line accesses the most recent version of RMNLIB used on IBM clusters
+. s.ssmuse.dot rmnlib-dev
+# Following line gives access to all the development tools e.g. s.compile (replacement for r.compile)
+. s.ssmuse.dot devtools
+xlf -qversion
+echo "Machine name... $EC_ARCH "
+

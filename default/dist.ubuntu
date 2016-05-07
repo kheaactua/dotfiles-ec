@@ -1,0 +1,10 @@
+# put in this file anything related to Linux (Ubuntu)
+# Following line controls the version of PGI compiler used on Linux machines
+. s.ssmuse.dot pgi9xx
+# following line gives access to forcheck
+. s.ssmuse.dot forcheck
+#
+# set backspace key
+ stty erase 
+# # include . in path
+ export PATH="$PATH:."

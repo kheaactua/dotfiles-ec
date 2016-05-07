@@ -1,0 +1,9 @@
+
+echo "executing script : $0"
+alias make=gmake
+# Following line controls the version of XLF compiler used on IBM clusters
+. s.ssmuse.dot Xlf13.108
+xlf -qversion
+echo "Machine name... $EC_ARCH "
+# Use s.locate to find the location of a given file e.g to find "rmnlib.h"
+#  s.locate --prepath=$ARMNLIB/include --inc rmnlib.h

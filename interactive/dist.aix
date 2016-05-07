@@ -1,0 +1,40 @@
+# CMC Language
+export CMCLNG=english
+
+# Some shortcuts to move around
+export hadar=/fs/dev/aqb/s1/arqp/rma
+export mobius=/local/mobius21/arqp/rma
+export pgm=/users/tor/arqp/pmr/gemmach15/ccc
+
+# backspace on spica
+#stty erase ^?
+
+alias screen="screen -e^Ff"
+#alias gst="git status"
+alias gd="git diff"
+
+source ~/gm/utils/geml.dot
+alias geml="showGemLogs"
+alias fgeml="echo \$(getMostRecentGemLog)"
+alias lgeml="less -I \$(getMostRecentGemLog)"
+
+# Balbir's 10km
+export b10=/users/tor/arqt/bal/gem-machcont10km_spica_usedailydata_v3script
+
+if [[ -e ~/.profile.d/interactive/aliases ]]; then
+	. ~/.profile.d/interactive/aliases
+fi;
+
+# Set prompt
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@${TRUE_HOST}\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+# Bash Completion, this is Hugo's, but might as well use it anyways..
+echo "Completion automatique de bash"
+for FILE in $(find /home/afsu/air/bash_completion -type f); do
+	echo -n "   $(basename ${FILE}) "
+	source $FILE
+done
+
+export PATH=${HOME}/gm/utils:$PATH
+
+# vim: ts=3 sw=3 sts=0 noet ffs=unix :

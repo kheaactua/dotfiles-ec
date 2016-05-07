@@ -1,0 +1,11 @@
+echo ".XWindows_profile ... 7th(last) file executed from ~/.profile.d"
+# execuuted when tty-s is true, and DISPLAY is set
+#. s.ssmuse.dot legacy ovbin ... temp commented out for spica
+tty -s | ulimit -m unlimited
+tty -s | ulimit -d unlimited
+tty -s | ulimit -s unlimited
+export MARKER=in_kde
+#setup backspace key
+stty erase 
+
+

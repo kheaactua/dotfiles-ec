@@ -1,0 +1,7 @@
+# Things loaded in this order 
+# L1 : default, interactive, batch
+# L2 : In each of above directories in L1, things runs in this order : pre,dist* etc,post
+# 
+# put anything here related to tty/terminal associated
+
+export PATH=~/.local/bin/:$PATH
