@@ -5,4 +5,7 @@ fi
 # And fix ls for AIX..
 if [[ "$(uname -s)" == "AIX" ]]; then
 	alias ls="ls -lAtrF"
-fi 
+	unalias grep
+fi
+
+# vim: ts=3 sw=3 sts=0 ft=sh ffs=unix :

@@ -1,9 +1,17 @@
 # put in this file anything related to Linux (Ubuntu)
 # Following line controls the version of PGI compiler used on Linux machines
-. s.ssmuse.dot pgi9xx
+# . s.ssmuse.dot pgi9xx
 # following line gives access to forcheck
-. s.ssmuse.dot forcheck
+. ssmuse-sh -d /ssm/net/hpcs/ext/forcheck-14.3
 #
+
+# Load the Intel compiler
+. ssmuse-sh -d hpcs/201402/02/base -d hpcs/201402/02/intel13sp1u2
+#############################
+#Need the following for AFSISIO and friends
+. ssmuse-sh -d cmoi/base/20141216
+###
+
 # set backspace key
  stty erase 
 # # include . in path

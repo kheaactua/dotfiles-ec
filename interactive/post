@@ -1,6 +1,13 @@
 GEM_VER="3.3.8.4"
 
 
+# Local setup for diagnostics
+# export TMG2_ON=YES
+# export NO_STOP_MESSAGE=1
+
+
+# Look in local bundle path for SSM shortcuts
+export SSM_SHORTCUT_PATH="$HOME/SsmBundles:${SSM_SHORTCUT_PATH}"
 #
 # Useful aliases and functions
 #

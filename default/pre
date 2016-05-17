@@ -19,6 +19,9 @@ export EDITFST=editfst2000
 export history=100
 export savehist=100
 #
+# Use the legacy-free rpn utils and libs by default everywhere - 20150924
+. ssmuse-sh -d rpn/libs/15.2
+. ssmuse-sh -d rpn/utils/15.2
 # following "ssmuse" commands adviseable in your scripts... doing it anyway for new  users
 #. s.ssmuse.dot dot ovbin legacy ...may 22/12..."legacy" removed due to conflict with "fgen+" 
 #....................................
@@ -33,6 +36,9 @@ export savehist=100
 #. s.ssmuse.dot legacy # some of  old path environnement (armnlib, afsisio), needed for  fst
 #.........................
 # set up your SPI path
+. ssmuse-sh -p /ssm/net/cmoe/apps/SPI_7.10.2
+alias spi='${SPI_PATH}/bin/SPI -lang 1'
+
 # define your alias here
 alias xt='xterm -geometry 95x25 -vb -bg navy -fg grey -ls -sb -cr green -rw -fn 10x20 &'
 alias chex='chmod +x'
@@ -52,4 +58,8 @@ unset XUSERFILESEARCHPATH
 #  . s.ssmuse.dot ~armnrmt/SsmDomains/gem-4.5.0-a10
 
 # In order to run, Jumpback scripts :
-export PATH=~/scripts:$PATH
+if [[ -e "~/scripts" ]]; then
+	export PATH=~/scripts:$PATH
+fi
+
+# vim: ts=3 sw=3 sts=0 noet ffs=unix ft=sh :
