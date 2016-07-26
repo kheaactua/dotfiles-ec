@@ -1,7 +1,8 @@
 # pre... is loaded before anything else
 
-# Matt, cnfs
-export cnfs=/cnfs/dev/aqd/pxarqdr3/arqp/rma
+# Matt, shortcut to CNFS
+# old location: /cnfs/dev/aqd/pxarqdr3/arqp/rma
+export cnfs=/fs/cetus/fs3/pxarqdr3/cnfs_pxarqdr3/arqp/rma
 
 # ORDENV_SETUP=0 ==> set up is not done yet ; ORDENV_SETUP=1 ==> set up is done already
 export ORDENV_SETUP=0 
